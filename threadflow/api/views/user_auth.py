@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from ..models import User
 from ..serializer import UserSerializer
-from dotenv import load_dotenv
+from ..utils import encodeJWT, decodeJWT
 
 # {"username":"testUsr", "password":"Not Hashed"}
 
@@ -19,7 +19,12 @@ def user_login(request):
         if password != userInfo['password']:
             return Response(status=status.HTTP_401_UNAUTHORIZED)
         
-        print("------",userInfo)
+        # Encoding userDetails using JWT -> https://pyjwt.readthedocs.io/en/stable/
+        result = encodeJWT(userInfo)
+
+        print("------",result)
+        result2 = decodeJWT('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiVGVzdCIsImxhc3RuYW1lIjoiVXNlciIsInVzZXJuYW1lIjoidGVzdFVzciIsInBhc3N3b3JkIjoiTm90IEhhc2hlZCJ9.8TC9flhRDacUvRsYg3s-2KCjUM8xaxSwMJ5a7FctSgA')
+        print("====", result2)
 
 
     except User.DoesNotExist:
