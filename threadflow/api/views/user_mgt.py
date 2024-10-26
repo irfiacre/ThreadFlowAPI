@@ -2,9 +2,10 @@ from django.shortcuts import render
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
-from .models import User
-from .serializer import UserSerializer
-# Create your views here.
+from ..models import User
+from ..serializer import UserSerializer
+
+# {"firstname": "john", "lastname":"doe","username":"jdoe","password":"12345"}
 
 @api_view(["GET"])
 def get_users(request):
@@ -42,5 +43,3 @@ def user_detail(request, pk):
     if request.method == 'DELETE':
         user.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
-
-    
