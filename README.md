@@ -7,10 +7,10 @@ This is a forum API built using Django REST Framework, designed to facilitate dy
 | Feature                               | Description                                                      | Completed |
 |---------------------------------------|------------------------------------------------------------------|-----------|
 | **1. User Authentication**            |                                                                  |           |
-| Register & Login                      | Users can register and log in to the forum.                      | [ ]       |
-| JWT Authentication                    | Use JSON Web Tokens (JWT) to manage authentication.              | [ ]       |
-| User Profiles                         | Each user has a profile with a bio, avatar, and customizable fields. | [ ]       |
-| Roles and Permissions                 | Admin, Moderator, and User roles with specific permissions.      | [ ]       |
+| Register & Login                      | Users can register and log in to the forum.                      | [/]       |
+| JWT Authentication                    | Use JSON Web Tokens (JWT) to manage authentication.              | [/]       |
+| User Profiles                         | Each user has a profile                                          | [/]       |
+| Roles and Permissions                 | Admin, Moderator, and User roles with specific permissions.      | [/]       |
 | **2. Thread Management**              |                                                                  |           |
 | Create a Thread                       | Users can create new discussion threads within a specific category. | [ ]       |
 | Edit/Delete a Thread                  | Users can edit or delete their own threads.                      | [ ]       |
