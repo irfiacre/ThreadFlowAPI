@@ -16,7 +16,7 @@ def get_users(request):
     return Response(serializer.data)
 
 @api_view(["POST"])
-def create_user(request):
+def register_user(request):
     request.data['password']=make_password(request.data['password'])
     serializer = UserSerializer(data=request.data)
     if serializer.is_valid():
