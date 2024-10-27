@@ -4,6 +4,8 @@ from rest_framework.response import Response
 from rest_framework import status
 from ..models import User
 from ..serializer import UserSerializer
+from django.contrib.auth.hashers import make_password
+
 
 # {"firstname": "john", "lastname":"doe","username":"jdoe","password":"12345"}
 
@@ -15,6 +17,7 @@ def get_users(request):
 
 @api_view(["POST"])
 def create_user(request):
+    request.data['password']=make_password(request.data['password'])
     serializer = UserSerializer(data=request.data)
     if serializer.is_valid():
         serializer.save()

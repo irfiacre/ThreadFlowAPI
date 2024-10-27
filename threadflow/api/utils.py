@@ -1,7 +1,7 @@
 import jwt, os
 from dotenv import load_dotenv
-from datetime import datetime
 
+# JWT Token -> https://pyjwt.readthedocs.io/en/stable/
 
 def encodeJWT(data)->str:
     try:
@@ -10,7 +10,6 @@ def encodeJWT(data)->str:
             data, 
             os.environ.get("JWT_KEY"), 
             algorithm=os.environ.get("JWT_ALGO"),
-            # {"exp": datetime.now(tz=timezone.) + datetime.timedelta(seconds=30)}
         )
         return result
     except Exception as ex:
