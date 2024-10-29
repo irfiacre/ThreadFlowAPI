@@ -1,5 +1,7 @@
 from django.urls import path
-from .views import user_auth, user_mgt
+
+from .views import user_auth
+from .views import user_mgt
 
 urlpatterns=[
     path('users/', user_mgt.get_users, name="get_users"),
