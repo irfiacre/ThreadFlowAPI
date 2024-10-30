@@ -4,18 +4,19 @@ from rest_framework.response import Response
 from rest_framework import status
 from ..models import Thread
 from ..serializer import ThreadSerializer
-from ..utils import CustomTokenAuthentication
-from rest_framework.permissions import IsAuthenticated
+from ..utils import CustomTokenAuthentication, decodeJWT
+from rest_framework.permissions import AllowAny
 
 
-
-# To be completed
 
 @api_view(["GET"])
 @authentication_classes([CustomTokenAuthentication])
-@permission_classes([IsAuthenticated])
+@permission_classes([AllowAny])
 def get_threads(request):
-    print("===", request.user, request.auth)
+    user_token = request.COOKIES.get('access_token')
+    # if not user_token:
+    #     raise AuthenticationFailed('Unauthenticated user.')
+    print("------->",request.current_user)
     threads = Thread.objects.all()
     serializer = ThreadSerializer(threads, many=True)
     return Response(serializer.data)

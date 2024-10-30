@@ -1,19 +1,14 @@
 from rest_framework.authentication import BaseAuthentication
 from rest_framework.exceptions import AuthenticationFailed
 from django.contrib.auth.models import User
+from .utils import decodeJWT
+
 
 class CustomTokenAuthentication(BaseAuthentication):
     def authenticate(self, request):
-        token = request.headers.get("Authorization")
-        if not token:
-            return None  # No token, fallback to other authentication if any
-        
-        if token != "xxx":
-            raise AuthenticationFailed("Invalid token")
+        user_token = request.COOKIES.get('access_token')
+        if not user_token:
+            raise AuthenticationFailed('Unauthenticated user.')        
+        current_user = decodeJWT(user_token)
 
-        try:
-            user = User.objects.get(username="jdoe")  # Adjust to match your logic
-        except User.DoesNotExist:
-            raise AuthenticationFailed("User not found")
-
-        return (user, None)
+        return (current_user, None)
