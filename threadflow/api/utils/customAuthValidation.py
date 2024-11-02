@@ -9,6 +9,6 @@ class CustomTokenAuthentication(BaseAuthentication):
         user_token = request.COOKIES.get('access_token')
         if not user_token:
             raise AuthenticationFailed('Unauthenticated user.')        
-        current_user = decodeJWT(user_token)
+        user = decodeJWT(user_token)
 
-        return (current_user, None)
+        return (user, None)

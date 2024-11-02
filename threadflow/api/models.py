@@ -9,6 +9,7 @@ class User(models.Model):
     role = models.CharField(max_length=20, default="user", null=True)
     photo_url=models.CharField(max_length=500, null=True)
     biography= models.CharField(max_length=500, null=True)
+    created_at = models.DateField(auto_now_add=True)
 
     def __str__(self) -> str:
         return self.username
@@ -17,8 +18,8 @@ class Thread(models.Model):
     title=models.CharField(max_length=100)
     description = models.CharField(max_length=1000)
     photo_url=models.CharField(max_length=500, null=True)
-    created_at = models.CharField(max_length=50, default=datetime.now())
-    updated_at = models.CharField(max_length=100, null=True)
+    created_at = models.DateField(auto_now_add=True)
+    updated_at = models.DateField(auto_now_add=True)
     user = models.ForeignKey(
         User,
         on_delete=models.PROTECT,
@@ -31,8 +32,8 @@ class Thread(models.Model):
 class Post(models.Model):
     message=models.CharField(max_length=1000)
     owner_username = models.CharField(max_length=20)
-    created_at = models.CharField(max_length=50, default=datetime.now())
-    updated_at = models.CharField(max_length=100, null=True)
+    created_at = models.DateField(auto_now_add=True)
+    updated_at = models.DateField(auto_now_add=True)
     thread = models.ForeignKey(
         Thread,
         on_delete=models.PROTECT,

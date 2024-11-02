@@ -3,7 +3,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from ..models import User
-from ..serializer import UserSerializer, UserLoginSerializer
+from ..serializer import UserSerializer
 from ..utils import encodeJWT
 from django.contrib.auth.hashers import check_password
 
@@ -17,7 +17,7 @@ def user_login(request):
         username = request.data['username']
         password=request.data['password']
         user = User.objects.get(username=username)
-        userInfo = UserLoginSerializer(user).data
+        userInfo = UserSerializer(user).data
         if not check_password(password, userInfo['password']):
             return Response(status=status.HTTP_401_UNAUTHORIZED)
     except User.DoesNotExist:
