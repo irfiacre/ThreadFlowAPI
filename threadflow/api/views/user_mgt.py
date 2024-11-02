@@ -18,6 +18,8 @@ def get_users(request):
 @api_view(["POST"])
 def register_user(request):
     request.data['password']=make_password(request.data['password'])
+    if 'photo_url' not in request.data:
+        request.data['photo_url'] = f'https://ui-avatars.com/api/?name={request.data['firstname']}+{request.data['lastname']}&background=random'
     serializer = UserSerializer(data=request.data)
     if serializer.is_valid():
         serializer.save()

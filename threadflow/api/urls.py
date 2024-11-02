@@ -9,6 +9,6 @@ urlpatterns=[
     path('users/register', user_mgt.register_user, name="register_user"),
     path('users/<int:pk>', user_mgt.user_detail, name="user_detail"),
     path('users/login/', user_auth.user_login, name="login"),
-    path('threads/', thread_mgt.get_threads, name="get_threads"),
-    path('threads/new', thread_mgt.create_thread, name="create_thread")
+    path('thread/', thread_mgt.manage_thread, name="manage_thread"),
+    path('thread/<int:pk>', thread_mgt.thread_detail, name="thread_detail")
 ]

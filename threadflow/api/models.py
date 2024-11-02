@@ -1,7 +1,7 @@
 from django.db import models
-from datetime import datetime
 
 class User(models.Model):
+    user_id = models.AutoField(primary_key=True)
     firstname=models.CharField(max_length=100)
     lastname = models.CharField(max_length=100)
     username = models.CharField(unique= True, max_length=50)
@@ -17,14 +17,10 @@ class User(models.Model):
 class Thread(models.Model):
     title=models.CharField(max_length=100)
     description = models.CharField(max_length=1000)
-    photo_url=models.CharField(max_length=500, null=True)
+    photo_url=models.CharField(max_length=500, null=True, default="https://picsum.photos/700/500")
     created_at = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now_add=True)
-    user = models.ForeignKey(
-        User,
-        on_delete=models.PROTECT,
-        blank=False
-    )
+    user = models.ForeignKey(User, on_delete=models.PROTECT, blank=False)
 
     def __str__(self) -> str:
         return self.title
@@ -34,16 +30,8 @@ class Post(models.Model):
     owner_username = models.CharField(max_length=20)
     created_at = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now_add=True)
-    thread = models.ForeignKey(
-        Thread,
-        on_delete=models.PROTECT,
-        blank=False
-    )
-    user = models.ForeignKey(
-        User,
-        on_delete=models.PROTECT,
-        blank=False
-    )
+    thread = models.ForeignKey(Thread, on_delete=models.PROTECT, blank=False)
+    user = models.ForeignKey(User, on_delete=models.PROTECT, blank=False)
 
     def __str__(self) -> str:
         return self.message
