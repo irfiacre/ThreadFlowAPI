@@ -12,9 +12,9 @@ This is a forum API built using Django REST Framework, designed to facilitate dy
 | User Profiles                         | Each user has a profile                                          | [/]       |
 | Roles and Permissions                 | Admin, Moderator, and User roles with specific permissions.      | [/]       |
 | **2. Thread Management**              |                                                                  |           |
-| Create a Thread                       | Users can create new discussion threads within a specific category. | [ ]       |
-| Edit/Delete a Thread                  | Users can edit or delete their own threads.                      | [ ]       |
-| Thread Categories                     | Organize threads into categories (e.g., Technology, Sports).     | [ ]       |
+| Create a Thread                       | Users can create new discussion threads within a specific category. | [/]       |
+| Edit/Delete a Thread                  | Users can edit or delete their own threads.                      | [/]       |
+| Thread Categories                     | Organize threads into categories (e.g., Technology, Sports).     | [/]       |
 | Tagging                               | Users can add tags to threads for better organization.           | [ ]       |
 | Thread Locking                        | Admins or moderators can lock threads to prevent further replies. | [ ]       |
 | **3. Post Management**                |                                                                  |           |

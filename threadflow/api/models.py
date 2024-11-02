@@ -10,6 +10,7 @@ class User(models.Model):
     photo_url=models.CharField(max_length=500, null=True)
     biography= models.CharField(max_length=500, null=True)
     created_at = models.DateField(auto_now_add=True)
+    is_banned = models.BooleanField(default=False)
 
     def __str__(self) -> str:
         return self.username
@@ -21,6 +22,7 @@ class Thread(models.Model):
     created_at = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.PROTECT, blank=False)
+    is_inappropriate = models.BooleanField(default=False)
 
     def __str__(self) -> str:
         return self.title
@@ -32,6 +34,7 @@ class Post(models.Model):
     updated_at = models.DateField(auto_now_add=True)
     thread = models.ForeignKey(Thread, on_delete=models.PROTECT, blank=False)
     user = models.ForeignKey(User, on_delete=models.PROTECT, blank=False)
+    is_inappropriate = models.BooleanField(default=False)
 
     def __str__(self) -> str:
         return self.message
