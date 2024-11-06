@@ -16,7 +16,7 @@ This is a forum API built using Django REST Framework, designed to facilitate dy
 | Edit/Delete a Thread                  | Users can edit or delete their own threads.                      | [/]       |
 | Thread Categories                     | Organize threads into categories (e.g., Technology, Sports).     | [/]       |
 | Tagging                               | Users can add tags to threads for better organization.           | [-]       |
-| Thread Locking                        | Admins or moderators can lock threads to prevent further replies. | [ ]       |
+| Thread Locking                        | Admins or moderators can lock threads to prevent further replies. | [-]       |
 | **3. Post Management**                |                                                                  |           |
 | Reply to a Thread                     | Users can post replies within threads.                           | [/]       |
 | Edit/Delete a Reply                   | Users can edit or delete their own replies.                     | [/]       |
