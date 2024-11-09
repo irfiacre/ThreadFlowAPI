@@ -20,7 +20,7 @@ This is a forum API built using Django REST Framework, designed to facilitate dy
 | **3. Post Management**                |                                                                  |           |
 | Reply to a Thread                     | Users can post replies within threads.                           | [/]       |
 | Edit/Delete a Reply                   | Users can edit or delete their own replies.                     | [/]       |
-| Thread Pagination                     | Paginate long threads for easier viewing.                       | [ ]       |
+| Thread Pagination                     | Paginate long threads for easier viewing.                       | [-]       |
 | Quote a Reply                         | Users can quote other users' replies when responding.           | [ ]       |
 | Markdown Support                       | Allow users to format replies using Markdown (or basic HTML).    | [ ]       |
 | Upvoting/Downvoting                   | Users can upvote or downvote replies to indicate helpfulness.    | [ ]       |
