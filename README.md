@@ -12,11 +12,11 @@ This is a forum API built using Django REST Framework, designed to facilitate dy
 | User Profiles                         | Each user has a profile                                          | [/]       |
 | Roles and Permissions                 | Admin, Moderator, and User roles with specific permissions.      | [/]       |
 | **2. Thread Management**              |                                                                  |           |
-| Create a Thread                       | Users can create new discussion threads within a specific category. | [/]       |
+| Create a Thread                       | Users can create new discussion threads within a specific category. | [/]    |
 | Edit/Delete a Thread                  | Users can edit or delete their own threads.                      | [/]       |
 | Thread Categories                     | Organize threads into categories (e.g., Technology, Sports).     | [/]       |
 | Tagging                               | Users can add tags to threads for better organization.           | [-]       |
-| Thread Locking                        | Admins or moderators can lock threads to prevent further replies. | [-]       |
+| Thread Locking                        | Admins or moderators can lock threads to prevent further replies. | [-]      |
 | **3. Post Management**                |                                                                  |           |
 | Reply to a Thread                     | Users can post replies within threads.                           | [/]       |
 | Edit/Delete a Reply                   | Users can edit or delete their own replies.                     | [/]       |
@@ -45,10 +45,6 @@ This is a forum API built using Django REST Framework, designed to facilitate dy
 | Points System                         | Users gain points for starting threads, getting upvotes, and replying to posts. | [ ] |
 | Rank Levels                           | Users unlock rank levels (e.g., Newbie, Expert) based on points. | [ ]     |
 | Badges & Achievements                 | Award badges for specific achievements (e.g., "100 replies posted"). | [ ]   |
-| **9. Admin Dashboard**                |                                                                  |           |
-| User Management                       | Admins can manage users (view/edit/delete).                     | [ ]       |
-| Category Management                   | Admins can create, edit, or delete forum categories.            | [ ]       |
-| View Reports                          | Display user activity reports, flagged content, and usage statistics. | [ ]   |
 | **10. Additional Features**           |                                                                  |           |
 | Thread Pinning                        | Admins or moderators can pin important threads to the top of the category. | [ ]  |
 | Private Messaging                     | Allow users to send direct messages to each other.               | [ ]       |
